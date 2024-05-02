@@ -3,4 +3,5 @@ from add_0 import add
 if __name__ == "__main__":
   a = 1
   b = 2
-  print("{a} + {b} = {result}".format(a=a, b=b, result=add))
+  result = add(a, b)
+  print("{a} + {b} = {result}".format(a=a, b=b, result=add(a, b)))
