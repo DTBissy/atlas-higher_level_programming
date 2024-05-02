@@ -5,7 +5,7 @@ if __name__ == "__main__":
   num = len(argv)
 
   if num < 2:
-      print("No arguments")
+      print("0 arguments.")
 
   if num == 2:
       print("1 argument:")
