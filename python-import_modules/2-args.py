@@ -8,7 +8,7 @@ if __name__ == "__main__":
       print("No arguments")
 
   if num == 2:
-      print("1 argument: ")
+      print("1 argument:")
       print("1: {}".format(argv[1]))
   else:
       print("{} arguments ".format(num - 1))
