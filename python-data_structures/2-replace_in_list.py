@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def replace_in_list(my_idx, idx, element):
-    if idx < len(my_idx) and idx >= 0:
-        my_idx[idx] = element
-        return (my_idx)
+def replace_in_list(my_list, idx, element):
+    if idx < len(my_list) and idx >= 0:
+        my_list[idx] = element
+        return (my_list)
