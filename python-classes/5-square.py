@@ -4,9 +4,10 @@
 
 class Square:
     """Square"""
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """My private size"""
         self.__size = size
+        self.position = position
 
     @property
     def size(self):
