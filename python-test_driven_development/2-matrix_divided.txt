@@ -1,0 +1,33 @@
+'This is for the matrix'
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+'All positive integers'
+>>> matrix_divided([[5, 10, 20], [2, 5, 4], [5, 10, 20]], 3)
+[[1.67, 3.33, 6.67], [0.67, 1.67, 1.33], [1.67, 3.33, 6.67]]
+
+'Negative values'
+>>> matrix_divided([[-4, -10, 9], [2, -19, 5], [-8, -10, 9]], 3)
+[[-1.33, -3.33, 3.0], [0.67, -6.33, 1.67], [-2.67, -3.33, 3.0]]
+
+'Negative Divisor'
+>>> matrix_divided([[5, 10, 20], [2, 5, 4]], -5)
+[[-1.0, -2.0, -4.0], [-0.4, -1.0, -0.8]]
+
+'Div isn't a number'
+>>> matrix_divided([[5, 10, 20], [2, 5, 4]], 'lol')
+Traceback (most recent call last):
+...
+TypeError: div must be number
+
+'Matrix is string'
+>>> matrix_divided("lol", 5)
+Traceback (most recent call last):
+...
+TypeError: Matrix must be a matrix (list of list) of integers/floats
+
+'Matrix has different size lists'
+>>> matrix_divided([[5, 10, 20], [2, 5]], -5)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
