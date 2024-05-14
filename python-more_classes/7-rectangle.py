@@ -5,8 +5,10 @@
 class Rectangle:
     """ This is a rectangle class"""
     number_of_instances = 0
+    print_symbol = "#"
     def __init__(self, width=0, height=0):
         """This method initializes its properties"""
+        Rectangle.number_of_instances += 1
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width < 0:
@@ -58,17 +60,16 @@ class Rectangle:
         return (self.__height + self.__width)* 2
 
     def __str__(self):
-        """This is the string for rectangle"""
-        string = ""
-        if self.width > 0 and self.height > 0:
-            for row in range(self.height):
-                for col in range(self.width):
-                    string += '#'
-                if row < self.height - 1:
-                    string += '\n'
-            return string
-        else:
-             return string
+        """This method is the string representation of the Rectangle"""
+        rectangle = ""
+        if (self.__height or self.__width) == 0:
+            return rectangle
+        for i in range(self.__height):
+            for i in range(self.__width):
+                rectangle += str(self.print_symbol)
+            rectangle += '\n'
+        rectangle = rectangle[:-1]
+        return rectangle
 
     def __repr__(self):
         """This method returns string of new object"""
