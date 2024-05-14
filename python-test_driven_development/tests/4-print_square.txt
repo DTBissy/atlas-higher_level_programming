@@ -1,0 +1,22 @@
+"This is for the 4-print_square function"
+
+>>> print_square = __import__("4-print_square").print_square
+
+'positive int'
+>>> print_square(4)
+####
+####
+####
+####
+
+'negative int'
+>>> print_square(-4)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+'Str passed'
+>>> print_square("No")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
