@@ -70,4 +70,4 @@ class Rectangle:
 
     def __repr__(self):
         """This method returns string of new object"""
-        return f"Rectangle{self.__width}, {self.__height})"
+        return f"Rectangle({self.__width}, {self.__height})"
