@@ -1,0 +1,32 @@
+"This a test case for 5-text_indentation"
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+'A string with punctuation'
+>>> text_indentation(""" I? Like.Burgers""")
+I
+<BLANKLINE>
+Like
+<BLANKLINE>
+Burgers
+
+'A non sting value'
+>>> text_indentation(1)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+'Exesive quotation'
+>>> text_indentation(1, 5, 7)
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+'Random string nonsense'
+>>> text_indentation("i.        ? Kakkkko/ Make it. Booo")
+i
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Kakkkko/ Make it
+<BLANKLINE>
+Booo
