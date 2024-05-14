@@ -23,18 +23,18 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_single_element(self):
         """Tests for a single element"""
-        test = [10]
+        test = [99]
         self.assertEqual(max_integer(test), 99)
 
     def test_negative_elements(self):
         """tests negative elements"""
         test = [-5. -6, -7, -18, -19]
-        self.assertEqual(max_integer(test), 99)
+        self.assertEqual(max_integer(test), -5)
 
     def empty_list(self):
         """Tests for empty Lists"""
         test = []
-        self.assertEqual(max_integer(test), 99)
+        self.assertEqual(max_integer(test), None)
 
     def mixed_numbers(self):
         """Tests for negative and postive elements"""

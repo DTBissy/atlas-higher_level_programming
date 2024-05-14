@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Unittest for max_integer([..])
 """
 import unittest
@@ -22,20 +23,29 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_single_element(self):
         """Tests for a single element"""
-        test = [10]
+        test = [99]
         self.assertEqual(max_integer(test), 99)
 
     def test_negative_elements(self):
         """tests negative elements"""
         test = [-5. -6, -7, -18, -19]
-        self.assertEqual(max_integer(test), 99)
+        self.assertEqual(max_integer(test), -5)
 
     def empty_list(self):
         """Tests for empty Lists"""
         test = []
-        self.assertEqual(max_integer(test), 99)
+        self.assertEqual(max_integer(test), None)
 
     def mixed_numbers(self):
         """Tests for negative and postive elements"""
         test = [1, 2, -3, -4, 50, -60]
         self.assertEqual(max_integer(test), 99)
+    def max_integer(list=[]):
+            if len(list) == 0:
+                return None
+            result = list[0]
+            i = 1
+            while i < len(list):
+                if list[i] > result:
+                    result = list[i]
+                i += 1
