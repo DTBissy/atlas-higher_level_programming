@@ -72,3 +72,7 @@ class Rectangle:
     def __repr__(self):
         """This method returns string of new object"""
         return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """This prints a custom message when deleting an instance"""
+        print("Bye rectangle...")
