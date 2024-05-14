@@ -3,9 +3,9 @@
 
 'A string with punctuation'
 >>> text_indentation(""" I? Like.Burgers""")
-I
+I?
 <BLANKLINE>
-Like
+Like.
 <BLANKLINE>
 Burgers
 
@@ -23,10 +23,10 @@ TypeError: text_indentation() takes 1 positional argument but 3 were given
 
 'Random string nonsense'
 >>> text_indentation("i.        ? Kakkkko/ Make it. Booo")
-i
+i.
 <BLANKLINE>
+?
 <BLANKLINE>
-<BLANKLINE>
-Kakkkko/ Make it
+Kakkkko/ Make it.
 <BLANKLINE>
 Booo
