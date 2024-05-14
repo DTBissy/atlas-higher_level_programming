@@ -18,13 +18,13 @@
 >>> matrix_divided([[5, 10, 20], [2, 5, 4]], 'lol')
 Traceback (most recent call last):
 ...
-TypeError: div must be number
+TypeError: div must be a number
 
 'Matrix is string'
 >>> matrix_divided("lol", 5)
 Traceback (most recent call last):
 ...
-TypeError: Matrix must be a matrix (list of list) of integers/floats
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 'Matrix has different size lists'
 >>> matrix_divided([[5, 10, 20], [2, 5]], -5)
