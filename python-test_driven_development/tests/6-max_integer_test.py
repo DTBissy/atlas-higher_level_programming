@@ -1,42 +1,50 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
 """
+
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
-
+    """
+    class for testing 6-max_integer_test.py
+    without arguments
+    """
     def test_max_integer(self):
-        """Postive Test"""
-        test = [99, 6, 7, 18, 19]
-        self.assertEqual(max_integer(test), 99)
+        """list of positive integers"""
+        test_list = [32, 5, 6, 12, 1, 17, 99]
+        self.assertEqual(max_integer(test_list), 99)
 
-    def test_max_middle(self):
-        """Tests for the max in the middle"""
-        test = [21, 54, 99, 67, 11]
-        self.assertEqual(max_integer(test), 99)
 
-    def test_max_end(self):
-        """Tests max at the end"""
-        test = [9, 9, 87, 1, 3, 99]
-        self.assertEqual(max_integer(test), 99)
 
-    def test_single_element(self):
-        """Tests for a single element"""
-        test = [99]
-        self.assertEqual(max_integer(test), 99)
+    def test_max_at_beginning(self):
+        """Positive ints with max at the [0]"""
+        test_list = [99, 1, 6, 2, 88, 33]
+        self.assertEqual(max_integer(test_list), 99)
 
-    def test_negative_elements(self):
-        """tests negative elements"""
-        test = [-5. -6, -7, -18, -19]
-        self.assertEqual(max_integer(test), -5)
 
-    def empty_list(self):
-        """Tests for empty Lists"""
-        test = []
-        self.assertEqual(max_integer(test), None)
+    def test_max_in_middle(self):
+        test_list = [5, 99, 1]
+        self.assertEqual(max_integer(test_list), 99)
 
-    def mixed_numbers(self):
-        """Tests for negative and postive elements"""
-        test = [1, 2, -3, -4, 50, -60]
-        self.assertEqual(max_integer(test), 99)
+
+    def test_one_negative_number(self):
+        test_list = [1, 5, 99, -12, 55]
+        self.assertEqual(max_integer(test_list), 99)
+
+
+    def test_only_negative_numbers(self):
+        test_list = [-99, -12, -55, -2, -9]
+        self.assertEqual(max_integer(test_list), -2)
+
+
+    def test_only_one_element(self):
+        test_list = [99]
+        self.assertEqual(max_integer(test_list), 99)
+
+
+    def test_empty_list(self):
+        test_list = []
+        self.assertEqual(max_integer(test_list), None)
