@@ -3,6 +3,7 @@
 
 
 def text_indentation(text):
+    """ this returns a indented text after checking edge cases"""
     if not(isinstance(text, str)):
         raise TypeError("text must be a string")
     new_line = True
