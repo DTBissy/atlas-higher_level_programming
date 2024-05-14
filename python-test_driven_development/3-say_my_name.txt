@@ -1,0 +1,22 @@
+'This is to print a name for 3-say_my_name'
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+'If the first_name is a string'
+>>> say_my_name("Tyler", "Backy")
+My name is Tyler Backy
+
+'If the last_name is a string'
+>>> say_my_name("Tyler", "Backy")
+My name is Tyler Backy
+
+'If first name isnt a number'
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+'If last name isnt a number'
+>>> say_my_name("John", 12)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
