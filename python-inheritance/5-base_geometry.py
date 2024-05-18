@@ -2,6 +2,6 @@
 """Emoty Class for geom"""
 
 
-class Geometry:
+class BaseGeometry:
     """Passing pass to pass"""
     pass
