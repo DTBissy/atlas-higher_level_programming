@@ -9,3 +9,12 @@
 >>> my_list.append(6)
 >>> my_list.print_sorted()
 [1, 4, 6]
+
+'For String'
+>>> my_list = MyList()
+>>> my_list.append("Killer")
+>>> my_list.append("Driller")
+>>> my_list.append("Shaka")
+>>> my_list.append("Laka")
+>>> my_list.print_sorted()
+['Driller', 'Killer', 'Laka', 'Shaka']
