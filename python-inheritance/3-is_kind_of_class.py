@@ -3,6 +3,6 @@
 
 
 def is_a_kind_of_class(obj, a_class):
-    """THis will return my bool
-    ksdkldslkfldaskf"""
+    """THis will return my boolksdkldslkfldaskf"""
+
     return isinstance(obj, a_class)
