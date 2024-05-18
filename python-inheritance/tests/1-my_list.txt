@@ -10,7 +10,7 @@
 >>> my_list.print_sorted()
 [1, 4, 6]
 
-'For String'
+'For __str__ '
 >>> my_list = MyList()
 >>> my_list.append("Killer")
 >>> my_list.append("Driller")
