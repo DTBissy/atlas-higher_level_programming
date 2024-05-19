@@ -1,0 +1,23 @@
+'This is for 7-base_geometry'
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+'A zero int'
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("sixth", 0)
+Traceback (most recent call last):
+...
+ValueError: sixth must be greater than 0
+
+'Float passed'
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("mankey", 8.9)
+Traceback (most recent call last):
+...
+TypeError: mankey must be an integer
