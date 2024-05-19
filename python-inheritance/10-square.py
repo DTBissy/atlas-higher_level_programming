@@ -9,7 +9,8 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """This is for square methods and attributes
-        And super overwrites the original classes __init__ method with our new one for
+        And super overwrites the original classes __init__ method
+        with our new one for
         the new class. But behaves the same"""
         self.integer_validator("size", size)
         super().__init__(size, size)
