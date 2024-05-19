@@ -11,8 +11,9 @@ class Square(Rectangle):
         """This is for square methods and attributes
         And super overwrites the original classes __init__ method with our new one for
         the new class. But behaves the same"""
-        super().__init__(size, size)
         self.integer_validator("size", size)
+        super().__init__(size, size)
+
         self.__size = size
 
     def area(self):
