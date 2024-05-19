@@ -21,3 +21,12 @@ ValueError: sixth must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: mankey must be an integer
+
+'Nothing passed'
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("sum", None)
+Traceback (most recent call last):
+...
+TyperError: sum must be an integer
+
+''
