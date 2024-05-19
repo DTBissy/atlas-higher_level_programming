@@ -27,6 +27,4 @@ TypeError: mankey must be an integer
 >>> bg.integer_validator("sum", None)
 Traceback (most recent call last):
 ...
-TyperError: sum must be an integer
-
-''
+TypeError: sum must be an integer
