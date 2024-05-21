@@ -3,6 +3,7 @@
 
 
 def read_file(filename=""):
+    """This reads a file entered"""
     with open (filename) as f:
         for line in f:
             print(line, end="")
