@@ -4,6 +4,7 @@
 
 import json
 
+
 def to_json_string(my_obj):
     """Rudementary json implementation"""
     json_object = json.dumps(my_obj)
