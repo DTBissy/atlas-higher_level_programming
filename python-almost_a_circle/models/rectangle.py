@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This is the rectangle that will inherit
 from class Base"""
-from models.base import *
+from base import *
 
 class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
@@ -11,6 +11,7 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
+
         super().__init__(id)
 
     @property
@@ -47,7 +48,7 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def width(self, value):
+    def x(self, value):
         """THis is my x setter"""
         if not isinstance(value, int):
             raise TypeError("Must be an int")
@@ -61,10 +62,18 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def width(self, value):
+    def y(self, value):
         """THis is my y setter"""
         if not isinstance(value, int):
             raise TypeError("Must be an int")
         if value <= 0:
             raise ValueError("cant be less than zero")
         self.__y = value
+
+
+p1 = Rectangle(1, 2, 3, 6, 5)
+print(p1.width)
+print(p1.height)
+print(p1.x)
+print(p1.y)
+print(p1.id)
