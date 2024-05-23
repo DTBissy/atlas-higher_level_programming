@@ -8,9 +8,24 @@ class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
     and i use super(id) to pull in the __init__ method of that class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        elif width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
+
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        elif width <= 0:
+            raise ValueError("width must be > 0")
         self.__height = height
+
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
+
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
 
         super().__init__(id)
@@ -26,7 +41,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("Must be an int")
         if value < 0:
-            raise ValueError("cant be less than zero")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -40,7 +55,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("Must be an int")
         if value < 0:
-            raise ValueError("cant be less than zero")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -54,7 +69,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("Must be an int")
         if value <= 0:
-            raise ValueError("cant be less than zero")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -68,5 +83,5 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("Must be an int")
         if value <= 0:
-            raise ValueError("cant be less than zero")
+            raise ValueError("y must be >= 0")
         self.__y = value
