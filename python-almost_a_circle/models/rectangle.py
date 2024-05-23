@@ -104,3 +104,6 @@ class Rectangle(Base):
             if row < self.__height - 1:
                 string += "\n"
         print(string)
+
+    def __str__(self):
+        return f"[Rectangle] {self.id} {self.x}/{self.y} - {self.__width}/{self.__height}"
