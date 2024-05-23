@@ -3,6 +3,7 @@
 from class Base"""
 from models.base import *
 
+
 class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
     and i use super(id) to pull in the __init__ method of that class"""
