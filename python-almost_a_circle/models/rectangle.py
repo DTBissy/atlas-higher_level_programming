@@ -7,11 +7,12 @@ class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
     and i use super(id) to pull in the __init__ method of that class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
+
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
