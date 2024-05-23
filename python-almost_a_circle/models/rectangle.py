@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This is the rectangle that will inherit
 from class Base"""
-from models.basebase import *
+from models.base import *
 
 class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
