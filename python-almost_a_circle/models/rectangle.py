@@ -7,6 +7,7 @@ from models.base import *
 class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
     and i use super(id) to pull in the __init__ method of that class"""
+    print_symbol = "#"
     def __init__(self, width, height, x=0, y=0, id=None):
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
@@ -93,3 +94,12 @@ class Rectangle(Base):
     def area(self):
         """This returns width times height for area"""
         return self.__width * self.__height
+
+    def display(self):
+        """Hopefully displays a rectangle"""
+        string = ""
+        for row in range(self.__height):
+            string += str(self.print_symbol) * self.__width
+            if row < self.__height - 1:
+                string += "\n"
+        print(string)
