@@ -8,6 +8,7 @@ class Rectangle(Base):
     """This is my Rectangle class and it inherits from my 'Base' class
     and i use super(id) to pull in the __init__ method of that class"""
     print_symbol = "#"
+
     def __init__(self, width, height, x=0, y=0, id=None):
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
