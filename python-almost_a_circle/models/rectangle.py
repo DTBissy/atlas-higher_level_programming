@@ -100,8 +100,8 @@ class Rectangle(Base):
         """Hopefully displays a rectangle"""
         for _ in range(self.y):
             print()
-        for i in range(self.__height):
-            print(" " * str(self.print_symbol) * self.__width)
+        for i in range(self.height):
+            print(" " * self.x + str(self.print_symbol) * self.__width)
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -" \
