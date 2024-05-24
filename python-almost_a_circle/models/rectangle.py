@@ -98,12 +98,10 @@ class Rectangle(Base):
 
     def display(self):
         """Hopefully displays a rectangle"""
-        string = ""
-        for row in range(self.__height):
-            string += str(self.print_symbol) * self.__width
-            if row < self.__height - 1:
-                string += "\n"
-        print(string)
+        for _ in range(self.y):
+            print()
+        for i in range(self.__height):
+            print(" " * str(self.print_symbol) * self.__width)
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -" \

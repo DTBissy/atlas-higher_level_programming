@@ -3,7 +3,9 @@
 
 
 class Base:
-    """This will be Base class ID keeper"""
+    """This will be Base class ID keeper and i Initiate the
+    Base.__nb_objects before i assign the self id to the number
+    of instances there are"""
     __nb_objects = 0
 
     def __init__(self, id=None):
