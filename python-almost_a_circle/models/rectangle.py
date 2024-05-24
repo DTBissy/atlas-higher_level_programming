@@ -117,7 +117,6 @@ class Rectangle(Base):
         if args_len >= 5:
             self.y = args[4]
 
-
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -" \
             f" {self.__width}/{self.__height}"
