@@ -103,7 +103,7 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x + str(self.print_symbol) * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """THis method assigns attrs to args"""
         args_len = len(args)
         if args_len >= 1:
@@ -116,6 +116,20 @@ class Rectangle(Base):
             self.x = args[3]
         if args_len >= 5:
             self.y = args[4]
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+
+    def dictionary(self):
+        """This method returns the dictionary representation of a Rectangle"""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y,
+        }
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -" \
