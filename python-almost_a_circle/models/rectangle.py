@@ -103,6 +103,21 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x + str(self.print_symbol) * self.__width)
 
+    def update(self, *args):
+        """THis method assigns attrs to args"""
+        args_len = len(args)
+        if args_len >= 1:
+            self.id = args[0]
+        if args_len >= 2:
+            self.width = args[1]
+        if args_len >= 3:
+            self.height = args[2]
+        if args_len >= 4:
+            self.x = args[3]
+        if args_len >= 5:
+            self.y = args[4]
+
+
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} -" \
             f" {self.__width}/{self.__height}"
