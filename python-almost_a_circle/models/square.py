@@ -10,10 +10,10 @@ class Square(Rectangle):
     uses super to initialize the attritbutes from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-        self.size = size
+        self.__size = size
 
     def __str__(self):
-        return f"[Square] {self.id} {self.x}/{self.y} - {self.size}"
+        return f"[Square] {self.id} {self.x}/{self.y} - {self.__size}"
 
     @property
     def size(self):
@@ -27,4 +27,4 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.size = value
+        self.__size = value
