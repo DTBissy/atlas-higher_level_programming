@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This will be my base class for almost_a_circle"""
+import json
 
 
 class Base:
@@ -14,3 +15,13 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+
+        list_dictionaries = []
+
+        if list_dictionaries is None:
+            return "[]"
+        else:
+            list_dictionaries = json.load(list_dictionaries)
