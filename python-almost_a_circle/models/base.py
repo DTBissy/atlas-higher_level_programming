@@ -23,6 +23,14 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return "[]"
+        else:
+            return json.loads(json_string)
+
+
     @classmethod
     def save_to_file(cls, list_objs):
         if list_objs is None:
@@ -34,9 +42,11 @@ class Base:
             json_string = cls.to_json_string(list)
             f.write(json_string)
 
-    @staticmethod
-    def from_json_string(json_string):
-        if json_string is None:
-            return "[]"
-        else:
-            return json.loads(json_string)
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
