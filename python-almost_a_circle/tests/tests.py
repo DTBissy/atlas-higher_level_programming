@@ -162,3 +162,41 @@ class Test_Rectangle(unittest.TestCase):
 
         self.assertIsNotNone(area)
         self.assertEqual(area, 6)
+
+    def test_str_method(self):
+        """This tests the string method"""
+        r1 = Rectangle(3, 2)
+        str = r1.__str__()
+
+        self.assertIsNotNone(str)
+        self.assertEqual(str, "[Rectangle] (10) 0/0 - 3/2")
+
+    def test_display_without_x_y(self):
+        """This test display without x and y"""
+
+        r1 = Rectangle(3, 2)
+        with self.assertRaises(AssertionError):
+            display = r1.display()
+
+            self.assertIsNotNone(display)
+            self.assertEqual(display, "[Rectangle] (10) 0/0 - 3/2" )
+
+    def test_display_without_y(self):
+        """This test display without x and y"""
+
+        r1 = Rectangle(3, 2, 1)
+        with self.assertRaises(AssertionError):
+            display = r1.display()
+
+            self.assertIsNotNone(display)
+            self.assertEqual(display, "[Rectangle] (10) 1/0 - 3/2" )
+
+    def test_display(self):
+        """This test display without x and y"""
+
+        r1 = Rectangle(3, 2, 1, 4)
+        with self.assertRaises(AssertionError):
+            display = r1.display()
+
+            self.assertIsNotNone(display)
+            self.assertEqual(display, "[Rectangle] (10) 1/4 - 3/2" )
