@@ -193,3 +193,10 @@ class Test_Rectangle(unittest.TestCase):
 
         r1 = Rectangle(3, 2, 1, 4)
         r1.display()
+
+    def to_dictionary(self):
+        """This tests the to_dictionary method exists"""
+        r1 = Rectangle(1, 3, 4, 5)
+        r1.to_dictionary()
+
+        self.assertIsNotNone(r1.to_dictionary)
