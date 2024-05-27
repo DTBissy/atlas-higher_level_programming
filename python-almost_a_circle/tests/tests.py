@@ -31,3 +31,15 @@ class TestBase(unittest.TestCase):
         """This returns a empty list exists"""
         result = Base.to_json_string([])
         self.assertEqual(result, '[]')
+
+    def test_Base_from_json(self):
+        """This checks a loaded json string when None passed"""
+        result = Base.from_json_string(None)
+        self.assertIsNone(result)
+
+    def test_from_Base_from_json_string_valid(self):
+        """This tests if a instance is created from a valid json"""
+        json_str = '{"id" : 43}'
+        result = Base.from_json_string(json_str)
+        self.assertIsInstance(result, Base)
+        self.assertEqual(result.id, 42)
