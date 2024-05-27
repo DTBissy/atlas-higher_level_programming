@@ -30,7 +30,6 @@ class Base:
         else:
             return json.loads(json_string)
 
-
     @classmethod
     def save_to_file(cls, list_objs):
         if list_objs is None:
