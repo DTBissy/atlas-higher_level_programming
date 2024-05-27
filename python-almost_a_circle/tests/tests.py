@@ -2,6 +2,7 @@
 """This will hold a mahority if not all of my UnitTest Cases"""
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -42,3 +43,28 @@ class TestBase(unittest.TestCase):
         json_str = '{"id": 1}'
         result = Base.from_json_string(json_str)
         self.assertEqual(result, {"id": 1})
+
+class Test_Rectangle(unittest.TestCase):
+    def test_Rectangle_args_to_height_passed(self):
+        """I pass in two args, width,height"""
+        r1 = Rectangle(1, 2)
+
+        self.assertEqual(r1.width, (1))
+        self.assertEqual(r1.height, (2))
+
+    def test_Rectangle_args_to_x_passed(self):
+        """I pass in three args, width, height, x"""
+        r1 = Rectangle(1, 2, 3)
+
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3 )
+
+    def test_Rectangle_args_to_y_passed(self):
+        """I pass 4 args, width, height, x, y"""
+        r1 = Rectangle(1, 2, 3, 4)
+
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
