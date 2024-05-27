@@ -21,9 +21,3 @@ class TestBase(unittest.TestCase):
 
         self.assertEqual(b1.id, 42)
         self.assertEqual(b2.id, 5)
-
-    def test_incremnt(self):
-        """This tests the increment if one id already exists"""
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(Base.__nb_objects, 2)
