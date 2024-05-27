@@ -68,3 +68,58 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 3)
         self.assertEqual(r1.y, 4)
+
+    def test_Rectangle_string_width_passed(self):
+        """I pass a string for width"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle("1", 2)
+
+            self.assertEqual(r1.height, 2)
+
+    def test_Rectangle_string_height_passed(self):
+        """I pass a string for height"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, "2")
+
+            self.assertEqual(r1.width, 1)
+
+    def test_Rectangle_string_x_passed(self):
+        """I pass a string for x"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, 2, "3")
+
+            self.assertEqual(r1.width, 1)
+            self.assertEqual(r1.height, 2)
+
+    def test_Rectangle_string_y_passed(self):
+        """I pass a string for y"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, 2, 3, "4")
+
+            self.assertEqual(r1.width, 1)
+            self.assertEqual(r1.x, 3)
+            self.assertEqual(r1.height, 2)
+
+    def test_Rectangle_args_to_id_passed(self):
+        """I pass 5 args, width, height, x, y, id"""
+        r1 = Rectangle(1, 2, 3, 4, 5)
+
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+        self.assertEqual(r1.id, 5)
+
+    def test_Rectangle_negative_width_passed(self):
+        """I pass a negative int for width"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-1, 2)
+
+            self.assertEqual(r1.height, 2)
+
+    def test_Rectangle_negative_height_passed(self):
+        """I pass a negative int for height"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, -2)
+
+            self.assertEqual(r1.width, 1)
