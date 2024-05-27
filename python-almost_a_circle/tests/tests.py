@@ -39,7 +39,7 @@ class TestBase(unittest.TestCase):
 
     def test_from_Base_from_json_string_valid(self):
         """This tests if a instance is created from a valid json"""
-        json_str = '{"id" : 43}'
+        json_str = '{"id": 43}'
         result = Base.from_json_string(json_str)
         self.assertIsInstance(result, Base)
-        self.assertEqual(result.id, 42)
+        self.assertEqual(result.id, 43)
