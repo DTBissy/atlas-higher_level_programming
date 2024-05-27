@@ -154,3 +154,11 @@ class Test_Rectangle(unittest.TestCase):
             self.assertEqual(r1.width, 1)
             self.assertEqual(r1.x, 3)
             self.assertEqual(r1.height, 2)
+
+    def test_area_exists(self):
+        """This tests if area exists"""
+        r1 = Rectangle(3, 2)
+        area = r1.area()
+
+        self.assertIsNotNone(area)
+        self.assertEqual(area, 6)
