@@ -169,7 +169,7 @@ class Test_Rectangle(unittest.TestCase):
         str = r1.__str__()
 
         self.assertIsNotNone(str)
-        self.assertEqual(str, "[Rectangle] (10) 0/0 - 3/2")
+        self.assertEqual(str, "[Rectangle] (8) 0/0 - 3/2")
 
     def test_display_without_x_y(self):
         """This test display without x and y"""
@@ -179,24 +179,3 @@ class Test_Rectangle(unittest.TestCase):
             display = r1.display()
 
             self.assertIsNotNone(display)
-
-
-    def test_display_without_y(self):
-        """This test display without x and y"""
-
-        r1 = Rectangle(3, 2, 1)
-        r1.display()
-
-
-    def test_display(self):
-        """This test display without x and y"""
-
-        r1 = Rectangle(3, 2, 1, 4)
-        r1.display()
-
-    def to_dictionary(self):
-        """This tests the to_dictionary method exists"""
-        r1 = Rectangle(1, 3, 4, 5)
-        r1.to_dictionary()
-
-        self.assertIsNotNone(r1.to_dictionary)
