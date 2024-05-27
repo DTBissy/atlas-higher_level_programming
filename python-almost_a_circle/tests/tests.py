@@ -134,7 +134,7 @@ class Test_Rectangle(unittest.TestCase):
     def test_Rectangle_for_zero_height_passed(self):
         """I pass a negative int for height"""
         with self.assertRaises(ValueError):
-            r1 = Rectangle(0, -2)
+            r1 = Rectangle(1, 0)
 
             self.assertEqual(r1.width, 1)
 
