@@ -123,3 +123,34 @@ class Test_Rectangle(unittest.TestCase):
             r1 = Rectangle(1, -2)
 
             self.assertEqual(r1.width, 1)
+
+    def test_Rectangle_for_zero_width_passed(self):
+        """I pass a negative int for width"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 2)
+
+            self.assertEqual(r1.height, 2)
+
+    def test_Rectangle_for_zero_height_passed(self):
+        """I pass a negative int for height"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, -2)
+
+            self.assertEqual(r1.width, 1)
+
+    def test_Rectangle_negative_x_passed(self):
+        """I pass a a negative int for x"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 2, -3)
+
+            self.assertEqual(r1.width, 1)
+            self.assertEqual(r1.height, 2)
+
+    def test_Rectangle_negative_y_passed(self):
+        """I pass a negative int for y"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 2, 3, -4)
+
+            self.assertEqual(r1.width, 1)
+            self.assertEqual(r1.x, 3)
+            self.assertEqual(r1.height, 2)
