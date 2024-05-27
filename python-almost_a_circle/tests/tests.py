@@ -25,7 +25,7 @@ class TestBase(unittest.TestCase):
     def test_Base_to_json_string(self):
         """Test that to_json returns 'null' when passed None"""
         result = Base.to_json_string(None)
-        self.assertEqual(result, '[]')
+        self.assertEqual(result, 'null')
 
     def test_Base_to_json_string_empty_list_exists(self):
         """This returns a empty list exists"""

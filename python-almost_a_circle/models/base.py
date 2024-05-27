@@ -19,14 +19,14 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None:
-            return "[]"
+            return "null"
         else:
             return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
         if json_string is None:
-            return "[]"
+            return "null"
         else:
             return json.loads(json_string)
 
