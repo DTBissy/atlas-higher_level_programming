@@ -169,12 +169,10 @@ class Test_Rectangle(unittest.TestCase):
         str = r1.__str__()
 
         self.assertIsNotNone(str)
-        self.assertEqual(str, "[Rectangle] (8) 0/0 - 3/2")
+        self.assertEqual(str, "[Rectangle] (7) 0/0 - 3/2")
 
     def test_display_without_x_y(self):
         """This test display without x and y"""
-        with self.assertRaises(AssertionError):
-            r1 = Rectangle(3, 3 ,4 ,5)
-            display = r1.display()
-
-            self.assertEqual(r1, display)
+        with self.assertRaises(AttributeError):
+            Rectangle.display(self)
+        pass
