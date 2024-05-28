@@ -172,5 +172,8 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(str, "[Rectangle] (7) 0/0 - 3/2")
 
     def test_display_without_x_y(self):
+        Rectangle.display(self)
         with self.assertRaises(TypeError):
-            Rectangle.display()
+            r1.display()
+
+        self.assertIsNotNone(Rectangle.display)
