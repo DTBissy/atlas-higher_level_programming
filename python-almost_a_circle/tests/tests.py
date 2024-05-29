@@ -3,6 +3,9 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import io
+import sys
+import os
 
 
 class TestBase(unittest.TestCase):
@@ -172,8 +175,11 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(str, "[Rectangle] (7) 0/0 - 3/2")
 
     def test_display_without_x_y(self):
-        Rectangle.display(self)
-        with self.assertRaises(TypeError):
-            r1.display()
+        r = Rectangle(width = 3, height = 4,)
 
-        self.assertIsNotNone(Rectangle.display)
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        r.display()
+        sys.stdout = sys.__stdout__
+        expected_output = "Displaying rectangle with width=3, height=2, x=1, y=0\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
