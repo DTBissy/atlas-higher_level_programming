@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" Creates a function that coneects to SQL Server"""
+""" SQL injection safe code"""
 import MySQLdb
 import sys
 
 
-def print_user_state():
+def print_user_state_safe():
     """Imports database"""
 
     """Connection"""
@@ -19,7 +19,6 @@ def print_user_state():
     """THe data to be printed"""
     row = cur.fetchall()
     for row in row:
-        if str(row[1]).
         print(row)
 
     cur.close()
@@ -27,4 +26,4 @@ def print_user_state():
 
 
 if __name__ == "__main__":
-    print_user_state()
+    print_user_state_safe()

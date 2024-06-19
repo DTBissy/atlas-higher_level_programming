@@ -17,7 +17,6 @@ def print_user_state():
     """THe data to be printed"""
     row = cur.fetchall()
     for row in row:
-        if str(row[1]).
         print(row)
 
     cur.close()
