@@ -8,8 +8,8 @@ from model_state import Base, State
 
 def list_states_with_a(username, password, db_name):
     """Create the engine"""
-    engine = create_engine(f'mysql+mysqldb://{username}:\
-                           {password}@localhost/{db_name}', echo=False)
+    engine = create_engine\
+    (f'mysql+mysqldb://{username}:\{password}@localhost/{db_name}', echo=False)
     
     #Initialize the session
     Session = sessionmaker(bind=engine)
