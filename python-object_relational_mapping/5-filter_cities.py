@@ -16,9 +16,7 @@ def usr_city_search():
             cities.id;"
     cur.execute(query)
     
-    row = cur.fetchall(query)
-    for row in row:
-        print(row)
+    print(", ".join(rows[0] for rows in cur.fetchall()))
     
     cur.close()
     db.close()
