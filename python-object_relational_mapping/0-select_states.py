@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ Lists all states to a database hbtn_0e_0_usa """
-
 import MySQLdb
 import sys
 
@@ -24,4 +23,3 @@ def list_states():
 
 if __name__ == "__main__":
     list_states()
-    
