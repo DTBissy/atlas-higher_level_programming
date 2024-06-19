@@ -11,7 +11,7 @@ def print_state_n():
     db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                          passwd="Gearsevenbb", db=sys.argv[3])
     cur = db.cursor()
-    cur.execute(f"SELECT * FROM states WHERE name LIKE BINARY\'{sys.argv[4]}' ORDER BY id;")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY\'{}' ORDER BY id;".format(sys.argv[4]))
 
     """THe data to be printed"""
     row = cur.fetchall()
