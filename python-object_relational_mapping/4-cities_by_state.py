@@ -10,7 +10,8 @@ def list_cities():
                          passwd=sys.argv[2], db=sys.argv[3])
     
     cur = db.cursor()
-    query = "SELECT * FROM cities ORDER BY id ASC;"
+    query = "SELECT cities.id, cities.name, states.name FROM cities\
+            JOIN states ON cities.state_id = states.id;"
     cur.execute(query)
 
     row = cur.fetchall()
