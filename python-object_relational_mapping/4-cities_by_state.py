@@ -13,6 +13,7 @@ def list_cities():
     query = "SELECT * FROM cities ORDER BY id ASC;"
     cur.execute(query)
 
+    row = cur.fetchall()
     for row in row:
         print(row)
 
