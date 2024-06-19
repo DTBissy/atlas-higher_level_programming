@@ -23,6 +23,6 @@ def usr_city_search():
 
 
 if __name__ == "__main__":
-    usr_city_search
+    usr_city_search()
 
     
