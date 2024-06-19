@@ -1,27 +1,30 @@
 #!/usr/bin/python3
-""" TAkes the name of a cuty in as a arg"""
+"""This module defines a function that creates a connection to a SQL server"""
+
 import MySQLdb
 import sys
 
 
-def usr_city_search():
-    """The city searcher"""
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
+def cities_for_state(username, password, dbase):
+    """This function imports a database to use"""
+    
+    db = MySQLdb.connect(host="localhost",
+                         user=username,
+                         passwd=password,
+                         database=dbase)
     
     cur = db.cursor()
-    # state_name = sys.argv[4].replace('"', "\\'")
-    cur.execute(f"SELECT cities.name FROM cities JOIN states ON cities.state_id\
-        = states.id WHERE states.name LIKE {sys.argv[4]} ORDER BY\
-            cities.id;")
-    
+    cur.execute("SELECT cities.name FROM cities JOIN states ON cities.state_id\
+        = states.id WHERE states.name LIKE %s ORDER BY cities.id\
+        ", (sys.argv[4],))
+
+    """Access the queried data to print"""
     print(", ".join(rows[0] for rows in cur.fetchall()))
-  
+
+    """Close the connection and cursor object"""
     cur.close()
     db.close()
 
 
 if __name__ == "__main__":
-    usr_city_search()
-
-    
+    cities_for_state(sys.argv[1], sys.argv[2], sys.argv[3])
