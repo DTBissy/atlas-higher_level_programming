@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+""" TAkes the name of a cuty in as a arg"""
+import MySQLdb
+import sys
+
+
+def usr_city_search():
+    """The city searcher"""
+    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1]
+                         passwd=sys.argv[2], db=sys.argv[3])
+    
+    cur = db.cursor()
+    state_name = sys.argv[4].replace("'", "\\'")
+    query = f"SELECT cities.name FROM cities JOIN states ON cities.state_id\
+        = states.id WHERE states.name LIKE {state_name} ORDER BY\
+            cities.id;"
+    cur.execute(query)
+    
+    row = cur.fetchall(query)
+    for row in row:
+        print(row)
+    
+    cur.close()
+    db.close()
+
+
+if __name__ == "__main__":
+    usr_city_search
+
+    
