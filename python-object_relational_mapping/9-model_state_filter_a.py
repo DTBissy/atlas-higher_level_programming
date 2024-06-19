@@ -11,18 +11,18 @@ def list_states_with_a(username, password, db_name):
     engine = create_engine(f'mysql+mysqldb://{username}:\
                            {password}@localhost/{db_name}', echo=False)
     
-    """Initialize the session"""
+    #Initialize the session
     Session = sessionmaker(bind=engine)
     session = Session()
     
-    """Query to find states containing the letter 'a'"""
+    # Query to find states containing the letter 'a'
     query = session.query(State).filter(State.name.contains('a')).order_by(State.id.asc())
     
-    """Execute the query and print the results"""
+    # Execute the query and print the results
     for state in query.all():
         print(f"{state.id}: {state.name}")
     
-    """Close the session"""
+    # Close the session
     session.close()
 
 if __name__ == "__main__":
