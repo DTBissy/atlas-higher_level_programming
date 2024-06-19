@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def print_state_n():
+def print_user_state():
     """Imports database"""
 
     """Connection"""
@@ -23,4 +23,4 @@ def print_state_n():
 
 
 if __name__ == "__main__":
-    print_state_n()
+    print_user_state()
