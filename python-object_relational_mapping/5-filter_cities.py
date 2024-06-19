@@ -7,12 +7,10 @@ import sys
 
 def cities_for_state(username, password, dbase):
     """This function imports a database to use"""
-    
     db = MySQLdb.connect(host="localhost",
                          user=username,
                          passwd=password,
                          database=dbase)
-    
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities JOIN states ON cities.state_id\
         = states.id WHERE states.name LIKE %s ORDER BY cities.id\
