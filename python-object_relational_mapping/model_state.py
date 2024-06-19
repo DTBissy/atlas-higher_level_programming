@@ -8,6 +8,7 @@ Base = declarative_base()
 
 
 class State(Base):
+    """Attribute isntantation"""
     __tablename__ = "states"
 
     id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
