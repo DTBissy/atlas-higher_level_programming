@@ -11,15 +11,12 @@ def usr_city_search():
     
     cur = db.cursor()
     # state_name = sys.argv[4].replace('"', "\\'")
-    query = f"SELECT cities.name FROM cities JOIN states ON cities.state_id\
+    cur.execute(f"SELECT cities.name FROM cities JOIN states ON cities.state_id\
         = states.id WHERE states.name LIKE {sys.argv[4]} ORDER BY\
-            cities.id;"
-    cur.execute(query)
+            cities.id;")
     
-    row = cur.fetchall()
-    for row in row:
-        print(row)
-    
+    print(", ".join(rows[0] for rows in cur.fetchall()))
+  
     cur.close()
     db.close()
 
