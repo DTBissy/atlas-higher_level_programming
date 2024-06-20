@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Creates my sql connection"""
 import sys
 from model_state import Base, State
