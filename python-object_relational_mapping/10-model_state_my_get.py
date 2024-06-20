@@ -1,25 +1,29 @@
-#!/usr/bin/python3
-""" Prints State objects from input."""
-
+#!/usr/bin/env python3
 import sys
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2],
-                                   sys.argv[3]), pool_pre_ping=True)
+def list_states_with_a(username, password, db_name):
+    # Create the engine
+    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost/{db_name}', echo=False)
     
-    Base.metadate.create_all(engine)
-    
+    # Initialize the session
     Session = sessionmaker(bind=engine)
     session = Session()
+    
+    # Query to find states containing the letter 'a'
+    query = session.query(State).filter(State.name.contains('a')).order_by(State.id.asc())
+    
+    # Execute the query and print the results
+    for state in query.all():
+        print(f"{state.id}: {state.name}")
+    
+    # Close the session
+    session.close()
 
-    state_name = sys.argv[4]
-    state = session.query(State).filter(State.name == state_name).first()
-
-    if state is None:
-        print("Not found")
-    else:
-        print(state.id)
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    list_states_with_a(username, password, db_name)
