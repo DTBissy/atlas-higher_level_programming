@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""This creates a SQL connection"""
+
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+
 
 def list_states_with_a(username, password, db_name):
     """Lists all states with a 'a'"""
