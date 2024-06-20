@@ -1,4 +1,4 @@
-#!/usr/bin.python
+#!/usr/bin/python
 """Creates my sql connection"""
 import sys
 from model_state import Base, State
@@ -17,4 +17,3 @@ if __name__ == "__main__":
     state = session.query(State).filter_by(id=2).first()
     state_name = "Mexico"
     session.commit()
-    
