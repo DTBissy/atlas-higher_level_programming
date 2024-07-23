@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 if (process.argv.length < 3) {
-  console.log('NaN');
+  console.log(1);
 } else {
   const fact = parseInt(process.argv[2]);
 
