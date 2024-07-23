@@ -4,7 +4,7 @@ const a = Number(process.argv[2]);
 const b = Number(process.argv[3]);
 
 if (process.argv.length < 3) {
-  console.log('need Numbers');
+  console.log('NaN');
 } else {
   function add (a, b) {
     return a + b;
