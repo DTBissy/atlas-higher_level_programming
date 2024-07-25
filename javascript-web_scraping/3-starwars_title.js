@@ -11,6 +11,5 @@ request(url, (error, response, body) => {
   } else {
     const movieData = JSON.parse(body).title;
     console.log(movieData);
-    console.log(response.statusCode);
   }
 });
