@@ -20,4 +20,5 @@ request(film, function (err, response, body) {
       }
     });
     console.log(count);
-  }});
+  }
+});
