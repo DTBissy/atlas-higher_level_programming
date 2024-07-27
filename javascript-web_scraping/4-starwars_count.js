@@ -1,5 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
+const https = require('https');
 
 const film = process.argv[2];
 
@@ -20,5 +21,4 @@ request(film, function (err, response, body) {
       }
     });
     console.log(count);
-  }
-});
+  }});
