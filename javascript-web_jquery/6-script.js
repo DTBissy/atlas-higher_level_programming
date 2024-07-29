@@ -1,6 +1,8 @@
 #!/usr/bin/node
 $(document).ready(function () {
   $('DIV#update_header').click(function () {
-    $('header').text('New Header!!!');
+    if ($('header').text('First HTML page')) {
+      $('header').text('New Header!!!');
+    }
   });
 });
